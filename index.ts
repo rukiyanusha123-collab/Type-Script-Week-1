@@ -1,4 +1,4 @@
-let username: string = "Rukiya";
+let username: string = "Rukiya"
 let age: number = 21;
 let isStudent: boolean = true;
 
