@@ -6,4 +6,4 @@ console.log("Name:", username);
 console.log("Age:", age);
 console.log("Student:", isStudent);
 
-export {}
+export {};
