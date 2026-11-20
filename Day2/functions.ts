@@ -39,7 +39,7 @@ console.log(add(10, 20));
 console.log(multiply(5, 4));
 
 studentDetails("Rukiya");
-studentDetails("Rukiya", 21)
+studentDetails("Rukiya", 21);
 
 console.log(calculatePrice(500));
 console.log(calculatePrice(500, 3));
