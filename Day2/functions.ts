@@ -46,4 +46,4 @@ console.log(calculatePrice(500, 3));
 
 console.log(findTotal(10, 20, 30, 40));
 
-export {};
+export {}
