@@ -36,7 +36,7 @@ function findTotal(...numbers: number[]): number {
 // Function calls
 console.log(greet("Rukiya"));
 console.log(add(10, 20));
-console.log(multiply(5, 4));
+console.log(multiply(5, 4))
 
 studentDetails("Rukiya");
 studentDetails("Rukiya", 21);
