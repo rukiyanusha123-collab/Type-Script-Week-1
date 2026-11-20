@@ -30,7 +30,7 @@ function calculatePrice(price: number, quantity: number = 1): number {
 
 // 6. Rest parameter
 function findTotal(...numbers: number[]): number {
-    return numbers.reduce((sum, num) => sum + num, 0);
+    return numbers.reduce((sum, num) => sum + num, 0)
 }
 
 // Function calls
