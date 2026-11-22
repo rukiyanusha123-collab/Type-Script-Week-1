@@ -19,4 +19,4 @@ const updatedUser = {
     ...originalUser,
     role: "Full Stack Developer",
 };
-console.log(updatedUser)
+console.log(updatedUser);
