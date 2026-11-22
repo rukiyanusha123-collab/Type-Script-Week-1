@@ -38,7 +38,7 @@ const staff: Staff = {
 const add: Calculator = (a, b) => a + b;
 
 console.log("User ID:", userId);
-console.log("Order Status:", orderStatus)
+console.log("Order Status:", orderStatus);
 console.log("Payment:", paymentMethod);
 console.log("Staff:", staff);
 console.log("Addition:", add(10, 20));
