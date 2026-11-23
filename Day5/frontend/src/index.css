@@ -1,0 +1,196 @@
+@import "tailwindcss";
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,ui-sans-serif,system-ui,sans-serif;background:#f8f7fc;color:#29243a}
+button,input,select{font:inherit}
+button{cursor:pointer}
+::selection{background:#dce5d5;color:#26312b}
+#root{min-height:100vh}
+
+/* Ambient background */
+.ambient{position:fixed;pointer-events:none;z-index:0;border-radius:50%;filter:blur(90px);opacity:.22;animation:ambientFloat 14s ease-in-out infinite alternate}
+.ambient-one{width:260px;height:260px;background:#c9d5bc;top:10%;right:5%}
+.ambient-two{width:220px;height:220px;background:#ded8c8;bottom:5%;left:35%;animation-delay:-5s}
+@keyframes ambientFloat{from{transform:translate3d(0,0,0)}to{transform:translate3d(25px,-30px,0)}}
+
+/* Page animations */
+.sidebar{animation:slideInLeft .65s cubic-bezier(.2,.7,.2,1) both}
+.main-content{animation:pageEnter .7s ease both}
+.topbar{animation:fadeDown .65s ease both}
+.hero-section{animation:fadeUp .65s .1s ease both}
+.directory-card{animation:fadeUp .65s .25s ease both}
+@keyframes slideInLeft{from{transform:translateX(-24px);opacity:0}to{transform:translateX(0);opacity:1}}
+@keyframes pageEnter{from{opacity:0}to{opacity:1}}
+@keyframes fadeDown{from{opacity:0;transform:translateY(-12px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+
+/* Sidebar */
+.logo-mark{transition:transform .3s,box-shadow .3s}
+.logo-mark:hover{transform:rotate(-8deg) scale(1.08);box-shadow:0 0 22px #a6b49a40}
+.nav-item{position:relative;overflow:hidden;transition:background .25s,color .25s,transform .25s}
+.nav-item:hover{background:#ffffff0d;color:#e5eadf;transform:translateX(4px)}
+.nav-active{background:#ffffff12;color:#d8e1d4}
+.nav-arrow{transition:opacity .25s,transform .25s}
+.nav-item:hover .nav-arrow{opacity:1;transform:translateX(3px)}
+.sidebar-note{transition:border-color .3s,background .3s,transform .3s}
+.sidebar-note:hover{border-color:#a6b49a55;background:#ffffff08;transform:translateY(-3px)}
+.avatar-admin{transition:transform .3s,background .3s}
+.avatar-admin:hover{transform:rotate(8deg) scale(1.08)}
+
+/* Buttons */
+.primary-btn{position:relative;overflow:hidden;transition:background .25s,transform .25s,box-shadow .25s}
+.primary-btn:hover{transform:translateY(-2px);box-shadow:0 9px 22px #26312b20}
+.primary-btn:active{transform:scale(.97)}
+.primary-btn::after{content:"";position:absolute;inset:0;transform:translateX(-130%);background:linear-gradient(110deg,transparent,#ffffff18,transparent);transition:transform .65s}
+.primary-btn:hover::after{transform:translateX(130%)}
+.secondary-btn,.close-btn,.action-btn{transition:transform .2s,background .2s,color .2s}
+.secondary-btn:hover,.close-btn:hover,.action-btn:hover{transform:translateY(-1px)}
+.secondary-btn:active,.close-btn:active,.action-btn:active{transform:scale(.96)}
+
+/* ✨ Enhanced interactive stats cards */
+.stat-card{
+  position:relative;
+  overflow:hidden;
+  isolation:isolate;
+  transform-style:preserve-3d;
+  transition:transform .4s cubic-bezier(.2,.7,.2,1),box-shadow .4s,border-color .4s,background .4s;
+  animation:statReveal .65s cubic-bezier(.2,.7,.2,1) both;
+}
+.stat-card:nth-child(2){animation-delay:.12s}
+.stat-card:nth-child(3){animation-delay:.24s}
+@keyframes statReveal{from{opacity:0;transform:translateY(22px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}
+
+/* Hover lift */
+.stat-card:hover{
+  transform:translateY(-7px) scale(1.015);
+  box-shadow:0 18px 38px #26312b0c,0 5px 12px #26312b08;
+  border-color:#d2d9c9;
+}
+
+/* Animated top accent */
+.stat-card::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:2px;
+  background:linear-gradient(90deg,#9eae92,#d9dfd1,#71836b);
+  transform:scaleX(0);
+  transform-origin:left;
+  transition:transform .55s cubic-bezier(.2,.7,.2,1);
+  z-index:2;
+}
+.stat-card:hover::before{transform:scaleX(1)}
+
+/* Soft decorative glow */
+.stat-card::after{
+  content:"";
+  position:absolute;
+  width:130px;
+  height:130px;
+  right:-65px;
+  bottom:-70px;
+  border-radius:50%;
+  background:radial-gradient(circle,#dfe8d7 0%,#dfe8d700 72%);
+  opacity:0;
+  transform:scale(.65);
+  transition:opacity .45s,transform .5s;
+  pointer-events:none;
+  z-index:-1;
+}
+.stat-card:hover::after{opacity:.9;transform:scale(1.35)}
+
+/* Icon animation */
+.stat-icon{
+  display:flex;
+  width:34px;
+  height:34px;
+  align-items:center;
+  justify-content:center;
+  border-radius:10px;
+  background:#f3f4ee;
+  color:#75836b;
+  transition:transform .4s cubic-bezier(.2,.7,.2,1),background .3s,box-shadow .3s;
+}
+.stat-card:hover .stat-icon{
+  transform:rotate(-10deg) scale(1.13);
+  background:#e8ede2;
+  box-shadow:0 5px 15px #7d92701a;
+}
+
+/* Number hover animation */
+.stat-number{
+  display:inline-block;
+  position:relative;
+  transition:transform .35s cubic-bezier(.2,.7,.2,1),color .35s;
+}
+.stat-card:hover .stat-number{
+  transform:translateY(-2px) scale(1.06);
+  color:#617257;
+}
+
+/* Active course card */
+.stat-card:nth-child(2):hover .stat-icon{transform:rotate(8deg) scale(1.13)}
+/* Status card */
+.stat-green{transition:transform .4s,box-shadow .4s,background .4s,border-color .4s}
+.stat-green:hover{background:#e2e9dc;border-color:#cbd6c1}
+.status-dot{
+  width:9px;height:9px;border-radius:50%;background:#7c9873;
+  box-shadow:0 0 0 4px #7c98731a;animation:pulse 2.2s infinite
+}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 4px #7c98731a}50%{box-shadow:0 0 0 8px #7c987300}}
+
+/* Search and filter */
+.search-box{transition:border-color .25s,box-shadow .25s,background .25s}
+.search-box:focus-within{border-color:#98a68c;background:white;box-shadow:0 0 0 3px #98a68c18}
+select{transition:border-color .2s,box-shadow .2s}
+select:hover{border-color:#c2cbb9}
+
+/* Student rows */
+.student-row{animation:rowAppear .45s ease both}
+.student-row:hover{background:#fbfaf7}
+.student-avatar{transition:transform .3s,box-shadow .3s}
+.student-row:hover .student-avatar{transform:scale(1.07) rotate(-3deg);box-shadow:0 4px 10px #26312b12}
+.course-badge{transition:background .25s,transform .25s}
+.student-row:hover .course-badge{background:#e4e9de;transform:translateY(-1px)}
+@keyframes rowAppear{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+
+/* Empty state */
+.empty-icon{transition:transform .35s,background .35s}
+.empty-state:hover .empty-icon{transform:rotate(90deg);background:#dfe7d8}
+
+/* Loading skeleton */
+.loading-row{height:58px;border-radius:10px;background:linear-gradient(90deg,#f2f0eb 25%,#e9e7e0 50%,#f2f0eb 75%);background-size:200% 100%;animation:shimmer 1.5s infinite linear}
+@keyframes shimmer{from{background-position:200% 0}to{background-position:-200% 0}}
+
+/* Drawer */
+.drawer-root{animation:fadeIn .2s ease both}
+.drawer-overlay{animation:overlayIn .25s ease both}
+.drawer-panel{animation:drawerIn .4s cubic-bezier(.2,.7,.2,1) both}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes overlayIn{from{opacity:0}to{opacity:1}}
+@keyframes drawerIn{from{transform:translateX(100%)}to{transform:translateX(0)}}
+.form-info{transition:transform .3s,background .3s}
+.form-info:hover{transform:translateY(-2px);background:#e2e9dc}
+.form-field{animation:fadeUp .4s ease both}
+.form-field:nth-child(2){animation-delay:.06s}
+.form-field:nth-child(3){animation-delay:.12s}
+.form-input{transition:border-color .25s,box-shadow .25s,transform .2s}
+.form-input:focus{transform:translateY(-1px);border-color:#8a9a7d;box-shadow:0 0 0 3px #8a9a7d18}
+.form-error{animation:shakeIn .35s ease both}
+@keyframes shakeIn{0%{opacity:0;transform:translateX(8px)}60%{transform:translateX(-3px)}100%{opacity:1;transform:translateX(0)}}
+
+/* Toast */
+.toast-pop{animation:toastIn .4s cubic-bezier(.2,.7,.2,1) both}
+@keyframes toastIn{from{opacity:0;transform:translateY(-15px) scale(.96)}to{opacity:1;transform:translateY(0) scale(1)}}
+
+/* Responsive */
+@media(max-width:1023px){.sidebar{animation:fadeDown .5s ease both}.ambient{opacity:.12}}
+@media(max-width:640px){.drawer-panel{max-width:100%}.hero-title{line-height:1.15}.topbar{gap:12px}.stat-card:hover{transform:translateY(-3px) scale(1.005)}}
+
+/* Reduced motion accessibility */
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}
+}
