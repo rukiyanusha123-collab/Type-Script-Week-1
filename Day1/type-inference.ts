@@ -19,7 +19,7 @@ studentAge = 22;
 
 console.log(course);
 console.log(mark);
-console.log(isPassed)
+console.log(isPassed);
 console.log(studentName);
 console.log(studentAge);
 console.log(passed);
