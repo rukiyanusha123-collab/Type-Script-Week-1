@@ -10,7 +10,7 @@ let studentAge: number = 21;
 let passed: boolean = true;
 
 // Inferred types
-course = "TypeScript"
+course = "TypeScript";
 // course = 100; // Error
 
 // Annotated types
