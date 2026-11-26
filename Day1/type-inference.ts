@@ -22,4 +22,4 @@ console.log(mark);
 console.log(isPassed);
 console.log(studentName);
 console.log(studentAge);
-console.log(passed)
+console.log(passed);
