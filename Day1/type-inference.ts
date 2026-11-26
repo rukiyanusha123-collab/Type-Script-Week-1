@@ -17,7 +17,7 @@ course = "TypeScript";
 studentAge = 22;
 // studentAge = "twenty"; // Error
 
-console.log(course)
+console.log(course);
 console.log(mark);
 console.log(isPassed);
 console.log(studentName);
