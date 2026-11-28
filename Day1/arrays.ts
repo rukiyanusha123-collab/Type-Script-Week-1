@@ -14,7 +14,7 @@ let doubled = numbers.map((num) => num * 2);
 let filtered = numbers.filter((num) => num > 20);
 
 // Reduce
-let total = prices.reduce((sum, price) => sum + price, 0);
+let total = prices.reduce((sum, price) => sum + price, 0)
 
 console.log(numbers);
 console.log(fruits);
