@@ -20,4 +20,4 @@ console.log(numbers);
 console.log(fruits);
 console.log(doubled);
 console.log(filtered);
-console.log(total)
+console.log(total);
