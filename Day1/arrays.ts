@@ -5,7 +5,7 @@ let prices: number[] = [100, 200, 300];
 
 // Add value
 numbers.push(60);
-fruits.push("Grapes")
+fruits.push("Grapes");
 
 // Map
 let doubled = numbers.map((num) => num * 2);
