@@ -11,7 +11,7 @@ fruits.push("Grapes");
 let doubled = numbers.map((num) => num * 2);
 
 // Filter
-let filtered = numbers.filter((num) => num > 20);
+let filtered = numbers.filter((num) => num > 20)
 
 // Reduce
 let total = prices.reduce((sum, price) => sum + price, 0);
