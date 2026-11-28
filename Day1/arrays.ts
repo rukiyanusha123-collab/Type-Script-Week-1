@@ -8,7 +8,7 @@ numbers.push(60);
 fruits.push("Grapes");
 
 // Map
-let doubled = numbers.map((num) => num * 2)
+let doubled = numbers.map((num) => num * 2);
 
 // Filter
 let filtered = numbers.filter((num) => num > 20)
